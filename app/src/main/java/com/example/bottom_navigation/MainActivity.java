@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawerLayout=findViewById(R.id.drawerLayout);
         NavigationView navigationView=findViewById(R.id.navigationView);
 
+
         //for the fragment
         appBarConfiguration=new AppBarConfiguration.Builder(
                 R.id.firstFragment,R.id.secondFragment,R.id.thirdFragment

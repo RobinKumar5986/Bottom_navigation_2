@@ -24,6 +24,12 @@ public class FirstFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_first, container, false);
+        view.findViewById(R.id.btnSend).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataToOne(view);
+            }
+        });
 
         view.findViewById(R.id.btnGoToThree).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,5 +38,12 @@ public class FirstFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    private void sendDataToOne(View v) {
+        int value = 22;
+        FirstFragmentDirections.ActionFirstFragmentToSecondFragment action =
+                FirstFragmentDirections.actionFirstFragmentToSecondFragment().setNumber(22);
+        Navigation.findNavController(v).navigate(action);
     }
 }
